@@ -5,15 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "dev": "nodemon --watch app.js app.js"
   },
-  "keywords": ["express", "api"],
+  "keywords": [
+    "express",
+    "api"
+  ],
   "author": "Prantik",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "shortid": "^2.2.16"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"

@@ -1,0 +1,64 @@
+POST http://localhost:2023
+Content-Type: application/json
+
+{
+    "name": "Sakib",
+    "country": "Bangladesh",
+    "rank": 1
+}
+
+### 
+
+POST http://localhost:2023
+Content-Type: application/json
+
+{
+    "name": "Tamim",
+    "country": "Bangladesh",
+    "rank": 7
+}
+
+### 
+
+GET http://localhost:2023
+
+### 
+
+GET http://localhost:2023/JqerSZt9-
+
+### 
+
+GET http://localhost:2023/a8DGcq2_I
+
+### 
+
+PUT http://localhost:2023/JqerSZt9-
+Content-Type: application/json
+
+{
+    "name": "Musfiq",
+    "country": "Bangladesh",
+    "rank": 2
+}
+
+### 
+
+PATCH  http://localhost:2023/JqerSZt9-
+Content-Type: application/json
+
+{
+    "rank": 5
+}
+
+### 
+
+PATCH  http://localhost:2023/JqerSZt9
+Content-Type: application/json
+
+{
+    "rank": 5
+}
+
+### 
+
+DELETE  http://localhost:2023/1d4CVKMi
