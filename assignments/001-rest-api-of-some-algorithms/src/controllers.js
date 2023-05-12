@@ -22,7 +22,7 @@ module.exports.analyzeString = (req, res) => {
 
 module.exports.getFakePerson = (req, res, next) => {
   try {
-    let props = JSON.parse(`[${req.query.props}]`);
+    let props = JSON.parse(`[${req.query.props ?? ''}]`);
     props = props.length ? props : null;
     const fakePerson = generateFakePerson(props);
     res.status(200).json(fakePerson);

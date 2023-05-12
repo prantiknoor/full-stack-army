@@ -9,10 +9,6 @@ app.use([cors(), morgan("dev"), express.json()]);
 
 app.use('/api/v1', router);
 
-app.get("/", (req, res) => {
-  res.send("Express on Vercel");
-});
-
 app.get("/health", (_req, res) => {
   res.status(200).json({ message: "Success" });
 });
