@@ -14,7 +14,6 @@ module.exports.randomNumber = (req, res) => {
 };
 
 module.exports.analyzeString = (req, res) => {
-  console.log(req.body);
   const s = req.method === "POST" ? req.body.toString() : req.query.s;
   if (!s) return res.status(400).json({ message: "Invalid input" });
   const report = stringAnalyzer(s);
@@ -23,7 +22,7 @@ module.exports.analyzeString = (req, res) => {
 
 module.exports.getFakePerson = (req, res, next) => {
   try {
-    let props = JSON.parse(req.query.props ?? "[]");
+    let props = JSON.parse(`[${req.query.props}]`);
     props = props.length ? props : null;
     const fakePerson = generateFakePerson(props);
     res.status(200).json(fakePerson);
