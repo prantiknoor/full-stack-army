@@ -7,7 +7,7 @@ const app = express();
 
 app.use([cors(), morgan("dev"), express.json()]);
 
-app.use(router);
+app.use('/api/v1', router);
 
 app.get("/health", (_req, res) => {
   res.status(200).json({ message: "Success" });
