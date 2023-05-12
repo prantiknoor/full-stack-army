@@ -1,14 +1,18 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
+const router = require("./routes");
 
 const app = express();
 
 app.use([cors(), morgan("dev"), express.json()]);
 
+app.use(router);
+
 app.get("/health", (_req, res) => {
   res.status(200).json({ message: "Success" });
 });
+
 
 app.use((_req, _res, next) => {
   const err = new Error("404 Not found");
