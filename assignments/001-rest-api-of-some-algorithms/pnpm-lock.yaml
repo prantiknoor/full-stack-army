@@ -3,12 +3,14 @@ lockfileVersion: 5.4
 specifiers:
   cors: ^2.8.5
   express: ^4.18.2
+  faker: 5.5.3
   morgan: ^1.10.0
   nodemon: ^2.0.22
 
 dependencies:
   cors: 2.8.5
   express: 4.18.2
+  faker: 5.5.3
   morgan: 1.10.0
 
 devDependencies:
@@ -238,6 +240,10 @@ packages:
       vary: 1.1.2
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /faker/5.5.3:
+    resolution: {integrity: sha512-wLTv2a28wjUyWkbnX7u/ABZBkUkIF2fCd73V6P2oFqEGEktDfzWx4UxrSqtPRw0xPRAcjeAOIiJWqZm3pP4u3g==}
     dev: false
 
   /fill-range/7.0.1:
