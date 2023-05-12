@@ -14,7 +14,8 @@ module.exports.randomNumber = (req, res) => {
 };
 
 module.exports.analyzeString = (req, res) => {
-  const { s } = req.query;
+  console.log(req.body);
+  const s = req.method === "POST" ? req.body.toString() : req.query.s;
   if (!s) return res.status(400).json({ message: "Invalid input" });
   const report = stringAnalyzer(s);
   res.status(200).json({ s, report });
