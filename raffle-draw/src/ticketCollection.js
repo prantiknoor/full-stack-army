@@ -27,6 +27,7 @@ class TicketCollection {
 
   updateById(id, ticketBody) {
     const ticket = this.findById(id);
+    if (!ticket) return false;
     ticket.username = ticketBody.username ?? ticket.username;
     ticket.price = ticketBody.price ?? ticket.price;
     return ticket;
@@ -49,7 +50,7 @@ class TicketCollection {
 
   updateBulk(username, ticketBody) {
     let userTickets = this.findByUsername(username);
-    userTickets = userTickets.map((ticket) =>
+    userTickets = userTickets?.map((ticket) =>
       this.updateById(ticket.id, ticketBody)
     );
     return userTickets;
@@ -76,4 +77,5 @@ class TicketCollection {
   }
 }
 
-const collection = new TicketCollection();
+const ticketCollection = new TicketCollection();
+module.exports = ticketCollection;
