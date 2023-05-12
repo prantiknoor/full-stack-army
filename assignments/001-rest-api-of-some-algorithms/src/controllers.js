@@ -1,3 +1,4 @@
+const generateFakePerson = require("./algorithms/generate-fake-person");
 const randomNumberGenerator = require("./algorithms/random-number-generator");
 const stringAnalyzer = require("./algorithms/string-analyzer");
 
@@ -17,4 +18,17 @@ module.exports.analyzeString = (req, res) => {
   if (!s) return res.status(400).json({ message: "Invalid input" });
   const report = stringAnalyzer(s);
   res.status(200).json({ s, report });
+};
+
+module.exports.getFakePerson = (req, res, next) => {
+  try {
+    let props = JSON.parse(req.query.props ?? "[]");
+    props = props.length ? props : null;
+    const fakePerson = generateFakePerson(props);
+    res.status(200).json(fakePerson);
+  } catch {
+    const err = new Error("Invalid input");
+    err.status = 400;
+    next(err);
+  }
 };
