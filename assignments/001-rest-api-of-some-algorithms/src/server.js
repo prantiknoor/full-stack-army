@@ -13,7 +13,6 @@ app.get("/health", (_req, res) => {
   res.status(200).json({ message: "Success" });
 });
 
-
 app.use((_req, _res, next) => {
   const err = new Error("404 Not found");
   err.status = 404;
@@ -33,6 +32,9 @@ app.get("/health", (_req, res) => {
 });
 
 const port = process.env.PORT || 2023;
+
 app.listen(port, () => {
   console.log("App is listening on PORT", port);
 });
+
+module.exports = app;
