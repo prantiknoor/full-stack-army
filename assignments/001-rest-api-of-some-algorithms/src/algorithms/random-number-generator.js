@@ -7,9 +7,6 @@
  * @param {number} end (inclusive)
  * @returns {number}
  */
-module.exports.randomNumberGenrator = (start, end) => {
+module.exports = function randomNumberGenerator(start, end) {
   return Math.floor(Math.random() * (end - start + 1)) + start;
 };
-
-
-console.log(this.randomNumberGenrator(20, 30));

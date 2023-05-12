@@ -6,12 +6,12 @@
  * @param {string} str
  * @returns {object}
  */
-module.exports.stringAnalyzer = (str) => {
+module.exports = function stringAnalyzer(str) {
   const alphabets = new Set([..."abcdefghijklmnopqrstuvwxyz"]);
   const digits = new Set([..."0123456789"]);
   return [...str].reduce(
     (acc, char) => {
-      if (alphabets.has(char)) acc.alphabets++;
+      if (alphabets.has(char.toLowerCase())) acc.alphabets++;
       else if (digits.has(char)) acc.numbers++;
       else acc.symbols++;
       return acc;
@@ -19,5 +19,3 @@ module.exports.stringAnalyzer = (str) => {
     { alphabets: 0, numbers: 0, symbols: 0 }
   );
 };
-
-console.log(this.stringAnalyzer("abcd1232#"))
