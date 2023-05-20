@@ -11,3 +11,5 @@ class Task {
         this.description = description;
     }
 }
+
+module.exports = Task;
