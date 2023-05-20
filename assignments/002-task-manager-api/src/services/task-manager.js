@@ -17,14 +17,14 @@ class TaskManager {
     }
 
     createTask({ title, description }) {
-        const task = new Task({ title, description });
+        const task = new Task(title, description);
         this.tasks[task.id] = task;
         return task;
     }
 
     updateTask(id, body) {
         const task = this.tasks[id];
-        
+        console.log(task); 
         if(!task) return;
 
         task.title = body.title ?? task.title;
@@ -34,7 +34,12 @@ class TaskManager {
     }
 
     deleteTask(id) {
-        if(id in this.tasks) return delete this.tasks[id];
-        return false;
+        if(id in this.tasks) {
+            return delete this.tasks[id];
+        }
     }
 }
+
+const taskManager = new TaskManager();
+
+module.exports = taskManager;
