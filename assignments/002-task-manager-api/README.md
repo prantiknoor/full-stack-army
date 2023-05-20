@@ -1,4 +1,4 @@
-# Requirements Specification (SRS) for the Task Manager API project:
+## Software Requirements Specification (SRS) for the Task Manager API project: 
 
 1. Introduction:
    - Purpose: The purpose of this API is to provide functionality for managing a todo list.
@@ -21,7 +21,7 @@
    - `GET /tasks`: Retrieves a list of all tasks in the todo list.
    - `POST /tasks`: Creates a new task with the provided title and optional description.
    - `GET /tasks/:taskId`: Retrieves a specific task by its ID.
-   - `PUT /tasks/:taskId`: Updates the title and/or description of a specific task.
+   - `PATCH /tasks/:taskId`: Updates the title and/or description of a specific task.
    - `DELETE /tasks/:taskId`: Deletes a specific task from the todo list.
 
 5. Data Model:
@@ -34,3 +34,4 @@
    - User authentication and authorization mechanisms should be implemented to ensure only authorized users can perform CRUD operations on the tasks.
    - Use appropriate security measures like HTTPS, input validation, and protection against common web vulnerabilities (e.g., SQL injection, cross-site scripting).
 
+> ChatGPT helped me to write this **SRS**.
