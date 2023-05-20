@@ -1,4 +1,5 @@
 const Task = require("../models/Task");
+const myDB = require("./my-db");
 
 class TaskManager {
     constructor() {
@@ -6,6 +7,8 @@ class TaskManager {
         * @type {Object.<string, Task>}
         */
         this.tasks = {};
+    
+        myDB.readTasks().then((data) => this.tasks = data);
     }
 
     getAllTasks() {
@@ -19,6 +22,9 @@ class TaskManager {
     createTask({ title, description }) {
         const task = new Task(title, description);
         this.tasks[task.id] = task;
+
+        myDB.updateTasks(this.tasks);
+
         return task;
     }
 
@@ -30,12 +36,16 @@ class TaskManager {
         task.title = body.title ?? task.title;
         task.description = body.description ?? task.description;
 
+        myDB.updateTasks(this.tasks);
+
         return task;
     }
 
     deleteTask(id) {
         if(id in this.tasks) {
-            return delete this.tasks[id];
+            delete this.tasks[id];
+            myDB.updateTasks(this.tasks);
+            return true;
         }
     }
 }
