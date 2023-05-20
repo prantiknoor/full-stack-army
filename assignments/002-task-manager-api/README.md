@@ -34,4 +34,8 @@
    - User authentication and authorization mechanisms should be implemented to ensure only authorized users can perform CRUD operations on the tasks.
    - Use appropriate security measures like HTTPS, input validation, and protection against common web vulnerabilities (e.g., SQL injection, cross-site scripting).
 
+## Diagram
+
+<img src="./diagrams/diagram.png" alt="diagram" style="background: #F0F0F0; margin: 4px 0 16px 0" />
+
 > ChatGPT helped me to write this **SRS**.
